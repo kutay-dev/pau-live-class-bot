@@ -31,6 +31,13 @@ while 1:
     driver.execute_script(
         "arguments[0].setAttribute('class', 'rmpView')", video_list)
 
+    status = xfind(
+        '/html/body/form/div[5]/div[2]/div/div[2]/div/div[4]/div[2]/div/table/tbody/tr[' + str(i) + ']/td[3]')
+
+    if status.text == "Görüntülendi":
+        i += 1
+        sleep(1)
+        continue
     xfind('/html/body/form/div[5]/div[2]/div/div[2]/div/div[4]/div[2]/div/table/tbody/tr[' + str(i) + ']/td[4]/span/input[1]').click()
 
     try :
